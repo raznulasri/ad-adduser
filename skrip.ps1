@@ -7,7 +7,7 @@ $Title       = "Senior HR Executive"
 $Department  = "HR"
 $Company     = "Kukuh Global Bhd"
 $City        = "Petaling Jaya"
-$Manager   = "ahmad"
+$Manager   = "ahmad.muzaffar"
 $Domain    = "gagah.net"
 
 $UserParams = @{
