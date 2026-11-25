@@ -31,3 +31,31 @@ $UserParams = @{
 }
 
 New-ADUser @UserParams
+
+
+Write-Host "`nAkaun '$FirstName $LastName' berjaya dicipta!" -ForegroundColor Cyan
+
+# Tukar SecureString kepada teks biasa untuk paparan output sahaja
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($Password)
+$PlainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+[System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($BSTR)
+
+Get-ADUser $Username -Properties DisplayName, Description, EmailAddress, Title, Department, Company, City, Manager |
+    Select-Object @{Name="Login Name"; Expression={$_.SamAccountName}},
+                  @{Name="TempPassword"; Expression={$PlainPassword}},
+                  DisplayName,
+                  Description,
+                  EmailAddress,
+                  Title,
+                  Department,
+                  Company,
+                  City,
+                  @{Name="Manager"; Expression={
+                      if ($_.Manager) {
+                          (Get-ADUser $_.Manager -Properties DisplayName).DisplayName
+                      } else {
+                          "Tiada"
+                      }
+                  }},
+                  Enabled |
+    Format-List
