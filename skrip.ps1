@@ -5,7 +5,7 @@ $LastName  = "Abdul Razak"
 $Description = "A123457"
 $Title       = "Senior HR Executive"
 $Department  = "HR"
-$Company     = "Kukuh Global Bhd"
+$Company     = "Kukuh Global Sdn Bhd"
 $City        = "Petaling Jaya"
 $Manager   = "ahmad.muzaffar"
 $Domain    = "gagah.net"
@@ -33,7 +33,7 @@ $UserParams = @{
 New-ADUser @UserParams
 
 
-Write-Host "`nAkaun '$FirstName $LastName' berjaya dicipta!" -ForegroundColor Cyan
+Write-Host "`nAkaun AD '$FirstName $LastName' berjaya dicipta!" -ForegroundColor Cyan
 
 # Tukar SecureString kepada teks biasa untuk paparan output sahaja
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($Password)
