@@ -1,7 +1,7 @@
 $Password  = Read-Host "Masukkan password sementara" -AsSecureString
-$Username  = "raznul.razak"
 $FirstName = "Raznul Asri"
 $LastName  = "Abdul Razak"
+$Username  = "raznul.razak"
 $Description = "A123457"
 $Title       = "Senior HR Executive"
 $Department  = "HR"
@@ -44,7 +44,7 @@ Get-ADUser $Username -Properties DisplayName, Description, EmailAddress, Title, 
     Select-Object @{Name="Login Name"; Expression={$_.SamAccountName}},
                   @{Name="TempPassword"; Expression={$PlainPassword}},
                   DisplayName,
-                  Description,
+                  @{Name="Staff ID"; Expression={$_.Description}},
                   EmailAddress,
                   Title,
                   Department,
