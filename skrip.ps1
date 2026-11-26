@@ -1,13 +1,13 @@
-$FirstName = "Raznul Asri"
-$LastName  = "Abdul Razak"
-$Username  = "raznul.razak"
-$StaffID = "A123457"
+$FirstName   = "Raznul Asri"
+$LastName    = "Abdul Razak"
+$Username    = "raznul.razak"
+$StaffID     = "A123457"
 $Title       = "Senior HR Executive"
 $Department  = "HR"
 $Company     = "Kukuh Global Sdn Bhd"
 $City        = "Petaling Jaya"
-$Manager   = "ahmad.muzaffar"
-$Domain    = "gagah.net"
+$Manager     = "ahmad.muzaffar"
+$Domain      = "gagah.net"
 $Password  = Read-Host "Masukkan password sementara" -AsSecureString
 
 $UserParams = @{
