@@ -24,7 +24,7 @@ $UserParams = @{
     Manager               = $Manager
     SamAccountName        = $Username
     UserPrincipalName     = "$Username@$Domain"
-    Path                  = "OU=HR,DC=gagah,DC=net"
+    Path                  = "OU=HR,OU=EndUser,DC=gagah,DC=net"
     AccountPassword       = $Password
     ChangePasswordAtLogon = $true
     Enabled               = $true
